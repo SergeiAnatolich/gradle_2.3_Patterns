@@ -3,6 +3,7 @@ package ru.netology.utils;
 import com.github.javafaker.Faker;
 import lombok.experimental.UtilityClass;
 import ru.netology.entities.RegistrationInfo;
+
 import java.util.Locale;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

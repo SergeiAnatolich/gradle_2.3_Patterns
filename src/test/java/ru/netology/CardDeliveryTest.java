@@ -5,11 +5,13 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
 import ru.netology.entities.RegistrationInfo;
 import ru.netology.utils.DataGenerator;
+
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
+
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
@@ -148,7 +150,7 @@ public class CardDeliveryTest {
     }
 
     @Test
-    public void cityInvalid(){
+    public void cityInvalid() {
         $("[data-test-id=city] input").val(invalidInfo.getCity());
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a") + Keys.DELETE);
         $("[data-test-id=date] input").val(validInfo.getDateMeeting());
@@ -156,7 +158,7 @@ public class CardDeliveryTest {
         $("[data-test-id=phone] input").val(validInfo.getPhoneNumber());
         $("[data-test-id=agreement]").click();
         $(withText("Запланировать")).click();
-        String actual =  $("[data-test-id=city].input_invalid .input__sub").getText();
+        String actual = $("[data-test-id=city].input_invalid .input__sub").getText();
         String expected = "Доставка в выбранный город недоступна";
         assertEquals(expected, actual);
     }
@@ -175,7 +177,7 @@ public class CardDeliveryTest {
     }
 
     @Test
-    public void dateIsOutdated(){
+    public void dateIsOutdated() {
         $("[data-test-id=city] input").val(validInfo.getCity());
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a") + Keys.DELETE);
         $("[data-test-id=date] input").val(invalidInfo.getDateMeetingOut());
@@ -183,13 +185,13 @@ public class CardDeliveryTest {
         $("[data-test-id=phone] input").val(validInfo.getPhoneNumber());
         $("[data-test-id=agreement]").click();
         $(withText("Запланировать")).click();
-        String actual =  $("[data-test-id=date] .input_invalid .input__sub").getText();
+        String actual = $("[data-test-id=date] .input_invalid .input__sub").getText();
         String expected = "Заказ на выбранную дату невозможен";
         assertEquals(expected, actual);
     }
 
     @Test
-    public void dateInvalid(){
+    public void dateInvalid() {
         $("[data-test-id=city] input").val(validInfo.getCity());
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a") + Keys.DELETE);
         $("[data-test-id=date] input").val(invalidInfo.getDateMeetingInvalid());
@@ -197,7 +199,7 @@ public class CardDeliveryTest {
         $("[data-test-id=phone] input").val(validInfo.getPhoneNumber());
         $("[data-test-id=agreement]").click();
         $(withText("Запланировать")).click();
-        String actual =  $("[data-test-id=date] .input_invalid .input__sub").getText();
+        String actual = $("[data-test-id=date] .input_invalid .input__sub").getText();
         String expected = "Неверно введена дата";
         assertEquals(expected, actual);
     }
@@ -216,7 +218,7 @@ public class CardDeliveryTest {
     }
 
     @Test
-    public void nameInvalid(){
+    public void nameInvalid() {
         $("[data-test-id=city] input").val(validInfo.getCity());
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a") + Keys.DELETE);
         $("[data-test-id=date] input").val(validInfo.getDateMeeting());
@@ -224,7 +226,7 @@ public class CardDeliveryTest {
         $("[data-test-id=phone] input").val(validInfo.getPhoneNumber());
         $("[data-test-id=agreement]").click();
         $(withText("Запланировать")).click();
-        String actual =  $("[data-test-id=name].input_invalid .input__sub").getText();
+        String actual = $("[data-test-id=name].input_invalid .input__sub").getText();
         String expected = "Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.";
         assertEquals(expected, actual);
     }
@@ -283,27 +285,27 @@ public class CardDeliveryTest {
     }
 
     @Test
-    public void allFieldsInvalidCheckboxChecked(){
+    public void allFieldsInvalidCheckboxChecked() {
         $("[data-test-id=city] input").val(invalidInfo.getCity());
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a") + Keys.DELETE);
         $("[data-test-id=date] input").val(invalidInfo.getDateMeetingInvalid());
         $("[data-test-id=name] input").val(invalidInfo.getName());
         $("[data-test-id=phone] input").val("8987");
         $(withText("Запланировать")).click();
-        String actual =  $("[data-test-id=city].input_invalid .input__sub").getText();
+        String actual = $("[data-test-id=city].input_invalid .input__sub").getText();
         String expected = "Доставка в выбранный город недоступна";
         assertEquals(expected, actual);
     }
 
     @Test
-    public void allFieldsInvalidCheckboxUnchecked(){
+    public void allFieldsInvalidCheckboxUnchecked() {
         $("[data-test-id=city] input").val(invalidInfo.getCity());
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a") + Keys.DELETE);
         $("[data-test-id=date] input").val(invalidInfo.getDateMeetingInvalid());
         $("[data-test-id=name] input").val(invalidInfo.getName());
         $("[data-test-id=phone] input").val("89876");
         $(withText("Запланировать")).click();
-        String actual =  $("[data-test-id=city].input_invalid .input__sub").getText();
+        String actual = $("[data-test-id=city].input_invalid .input__sub").getText();
         String expected = "Доставка в выбранный город недоступна";
         assertEquals(expected, actual);
     }
