@@ -35,7 +35,8 @@ public class CardDeliveryTest {
 
     @Test
     public void confirmationMeeting() {
-        $("[data-test-id=city] input").val(validInfo.getCity());
+        $("[data-test-id=city] input").val(validInfo.getCity().substring(0, 2));
+        $$(".menu-item").first().click();
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a") + Keys.DELETE);
         $("[data-test-id=date] input").val(validInfo.getDateMeeting());
         $("[data-test-id=name] input").val(validInfo.getName());
@@ -51,7 +52,8 @@ public class CardDeliveryTest {
 
     @Test
     public void rescheduleMeeting() {
-        $("[data-test-id=city] input").val(validInfo.getCity());
+        $("[data-test-id=city] input").val(validInfo.getCity().substring(0, 2));
+        $$(".menu-item").first().click();
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a") + Keys.DELETE);
         $("[data-test-id=date] input").val(validInfo.getDateMeeting());
         $("[data-test-id=name] input").val(validInfo.getName());
@@ -68,7 +70,8 @@ public class CardDeliveryTest {
 
     @Test
     public void rescheduleMeetingMessageDate() {
-        $("[data-test-id=city] input").val(validInfo.getCity());
+        $("[data-test-id=city] input").val(validInfo.getCity().substring(0, 2));
+        $$(".menu-item").first().click();
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a") + Keys.DELETE);
         $("[data-test-id=date] input").val(validInfo.getDateMeeting());
         $("[data-test-id=name] input").val(validInfo.getName());
@@ -87,7 +90,8 @@ public class CardDeliveryTest {
 
     @Test
     public void formSendSuccessWindowAppear() {
-        $("[data-test-id=city] input").val(validInfo.getCity());
+        $("[data-test-id=city] input").val(validInfo.getCity().substring(0, 2));
+        $$(".menu-item").first().click();
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a") + Keys.DELETE);
         $("[data-test-id=date] input").val(validInfo.getDateMeeting());
         $("[data-test-id=name] input").val(validInfo.getName());
@@ -99,7 +103,8 @@ public class CardDeliveryTest {
 
     @Test
     public void formSendSuccessMessageSuccessfully() {
-        $("[data-test-id=city] input").val(validInfo.getCity());
+        $("[data-test-id=city] input").val(validInfo.getCity().substring(0, 2));
+        $$(".menu-item").first().click();
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a") + Keys.DELETE);
         $("[data-test-id=date] input").val(validInfo.getDateMeeting());
         $("[data-test-id=name] input").val(validInfo.getName());
@@ -114,7 +119,8 @@ public class CardDeliveryTest {
 
     @Test
     public void formSendSuccessMessageDateDelivery() {
-        $("[data-test-id=city] input").val(validInfo.getCity());
+        $("[data-test-id=city] input").val(validInfo.getCity().substring(0, 2));
+        $$(".menu-item").first().click();
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a") + Keys.DELETE);
         $("[data-test-id=date] input").val(validInfo.getDateMeeting());
         $("[data-test-id=name] input").val(validInfo.getName());
@@ -165,7 +171,8 @@ public class CardDeliveryTest {
 
     @Test
     public void dateNull() {
-        $("[data-test-id=city] input").val(validInfo.getCity());
+        $("[data-test-id=city] input").val(validInfo.getCity().substring(0, 2));
+        $$(".menu-item").first().click();
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a") + Keys.DELETE);
         $("[data-test-id=name] input").val(validInfo.getName());
         $("[data-test-id=phone] input").val(validInfo.getPhoneNumber());
@@ -178,7 +185,8 @@ public class CardDeliveryTest {
 
     @Test
     public void dateIsOutdated() {
-        $("[data-test-id=city] input").val(validInfo.getCity());
+        $("[data-test-id=city] input").val(validInfo.getCity().substring(0, 2));
+        $$(".menu-item").first().click();
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a") + Keys.DELETE);
         $("[data-test-id=date] input").val(invalidInfo.getDateMeetingOut());
         $("[data-test-id=name] input").val(validInfo.getName());
@@ -192,7 +200,8 @@ public class CardDeliveryTest {
 
     @Test
     public void dateInvalid() {
-        $("[data-test-id=city] input").val(validInfo.getCity());
+        $("[data-test-id=city] input").val(validInfo.getCity().substring(0, 2));
+        $$(".menu-item").first().click();
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a") + Keys.DELETE);
         $("[data-test-id=date] input").val(invalidInfo.getDateMeetingInvalid());
         $("[data-test-id=name] input").val(validInfo.getName());
@@ -206,7 +215,8 @@ public class CardDeliveryTest {
 
     @Test
     public void nameNull() {
-        $("[data-test-id=city] input").val(validInfo.getCity());
+        $("[data-test-id=city] input").val(validInfo.getCity().substring(0, 2));
+        $$(".menu-item").first().click();
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a") + Keys.DELETE);
         $("[data-test-id=date] input").val(validInfo.getDateMeeting());
         $("[data-test-id=phone] input").val(validInfo.getPhoneNumber());
@@ -219,7 +229,8 @@ public class CardDeliveryTest {
 
     @Test
     public void nameInvalid() {
-        $("[data-test-id=city] input").val(validInfo.getCity());
+        $("[data-test-id=city] input").val(validInfo.getCity().substring(0, 2));
+        $$(".menu-item").first().click();
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a") + Keys.DELETE);
         $("[data-test-id=date] input").val(validInfo.getDateMeeting());
         $("[data-test-id=name] input").val(invalidInfo.getName());
@@ -233,7 +244,8 @@ public class CardDeliveryTest {
 
     @Test
     public void phoneNull() {
-        $("[data-test-id=city] input").val(validInfo.getCity());
+        $("[data-test-id=city] input").val(validInfo.getCity().substring(0, 2));
+        $$(".menu-item").first().click();
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a") + Keys.DELETE);
         $("[data-test-id=date] input").val(validInfo.getDateMeeting());
         $("[data-test-id=name] input").val(validInfo.getName());
@@ -273,7 +285,8 @@ public class CardDeliveryTest {
 
     @Test
     public void allFieldsValidCheckboxUnchecked() {
-        $("[data-test-id=city] input").val(validInfo.getCity());
+        $("[data-test-id=city] input").val(validInfo.getCity().substring(0, 2));
+        $$(".menu-item").first().click();
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "a") + Keys.DELETE);
         $("[data-test-id=date] input").val(validInfo.getDateMeeting());
         $("[data-test-id=name] input").val(validInfo.getName());
@@ -325,7 +338,8 @@ public class CardDeliveryTest {
 
     @Test
     public void selectionDateFromCalendar() {
-        $("[data-test-id=city] input").val(validInfo.getCity());
+        $("[data-test-id=city] input").val(validInfo.getCity().substring(0, 2));
+        $$(".menu-item").first().click();
         $("[data-test-id=date] button").click();
         Calendar calendar = new GregorianCalendar();
         calendar.add(Calendar.DAY_OF_YEAR, 7);
